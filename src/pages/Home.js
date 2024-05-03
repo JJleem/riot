@@ -4,13 +4,13 @@ import { riotAction } from "../redux/actions/riotAction";
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { puuids } = useSelector((state) => state.gameName);
+  const { puuids } = useSelector((state) => state);
 
   useEffect(() => {
     dispatch(riotAction.getDatas());
   }, []);
-  console.log(puuids);
-  return <div>Home</div>;
+  // console.log(puuids);
+  return <div>{puuids}</div>;
 };
 
 export default Home;

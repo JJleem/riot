@@ -1,19 +1,19 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL:
-    "https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/",
+axios.defaults.withCredentials = true;
 
+const api = axios.create({
+  baseURL: `https://asia.api.riotgames.com/riot/account/v1/accounts/by-riot-id/%EC%9E%84%EC%9E%AC%EC%A4%80/KR1`,
   headers: {
     "User-Agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Whale/3.25.232.19 Safari/537.36",
-    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7,ja;q=0.6",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept-Language": "ko-KR,ko;q=0.9,en-US;q=0.8,en;q=0.7",
     "Accept-Charset": "application/x-www-form-urlencoded; charset=UTF-8",
+    Origin: "https://developer.riotgames.com",
   },
-  Origin: "https://developer.riotgames.com",
 });
 
-api.interceptors.request.use(
+axios.interceptors.request.use(
   function (config) {
     return config;
   },
@@ -23,7 +23,7 @@ api.interceptors.request.use(
 );
 
 // 응답 인터셉터 추가하기
-api.interceptors.response.use(
+axios.interceptors.response.use(
   function (response) {
     return response;
   },

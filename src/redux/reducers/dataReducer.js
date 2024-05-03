@@ -1,9 +1,6 @@
 const initialState = {
   puuids: {},
-  // topRatedMovies: {},
-  // upComingMovies: {},
-  // loading: true,
-  // genereList: [],
+ 
 };
 
 const dataReducer = (state = initialState, action) => {
